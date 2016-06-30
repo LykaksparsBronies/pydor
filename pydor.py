@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import filedialog
 
+print("adding variables...")
+
 isSaved = None
 
 """
@@ -9,6 +11,8 @@ CREATED BY LYKAKSPARS
 """
 
 filename = None
+
+print("adding functions...")
 
 def newFile():
     global filename
@@ -40,14 +44,18 @@ def openFile():
     text.insert(0.0, t)
     isSaved = None
 
+
+print("Adding Root Tk...")
 root = Tk()
 root.title("pydor")
 root.minsize(width=900, height=900)
 root.maxsize(width=900, height=900)
 
+print("Adding Text...")
 text = Text(root, width=900, height=900)
 text.pack()
 
+print("Adding Menubar...")
 menubar = Menu(root)
 filemenu = Menu(menubar)
 filemenu.add_command(label="New File")
@@ -58,5 +66,7 @@ filemenu.add_separator()
 filemenu.add_command(label="Quit", command=root.quit)
 menubar.add_cascade(label="File", menu=filemenu)
 
+print("Configuring the Root...")
 root.config(menu=menubar)
+print("Complete!")
 root.mainloop()
