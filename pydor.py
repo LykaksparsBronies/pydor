@@ -48,7 +48,7 @@ def openFile():
 print("Adding Root Tk...")
 root = Tk()
 root.title("pydor")
-root.minsize(width=900, height=900)
+root.minsize(width=300, height=300)
 root.maxsize(width=900, height=900)
 
 print("Adding Text...")
