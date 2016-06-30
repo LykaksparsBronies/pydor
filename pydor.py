@@ -68,5 +68,6 @@ menubar.add_cascade(label="File", menu=filemenu)
 
 print("Configuring the Root...")
 root.config(menu=menubar)
+root.iconbitmap('icon.ico')
 print("Complete!")
 root.mainloop()
