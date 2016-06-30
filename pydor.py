@@ -1,5 +1,7 @@
 from tkinter import *
-from tkfiledialog import *
+from tkinter import filedialog
+
+isSaved = None
 
 """
 PYDOR 0.1
@@ -12,6 +14,16 @@ def newFile():
     global filename
     filename = "Untitled"
     text.delete(0.0, END)
+    isSaved = None
+
+def saveAs():
+    f = asksaveasfile(node="w", defaultextension="*.*")
+    t = text.get(0.0, END)
+    try:
+        f.write(t.rstrip())
+        isSaved = True
+    except:
+        showerror(title="Oops!", message="Unable to save file...")
 
 def saveFile():
     global filename
@@ -19,20 +31,14 @@ def saveFile():
     f = open(filename, 'w')
     f.write(t)
     f.close()
-
-def saveAs():
-    f = asksaveasfile(node="w", defaultextension="*.*")
-    t = text.get(0.0, END)
-    try:
-        f.write(t.rstrip())
-    except:
-        showerror(title="Oops!", message="Unable to save file...")
+    isSaved = True
 
 def openFile():
     f = askopenfile(node='r')
     t = f.read()
     text.delete(0.0, END)
     text.insert(0.0, t)
+    isSaved = None
 
 root = Tk()
 root.title("pydor")
