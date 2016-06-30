@@ -6,7 +6,7 @@ print("adding variables...")
 isSaved = None
 
 """
-PYDOR 0.1
+PYDOR
 CREATED BY LYKAKSPARS
 """
 
